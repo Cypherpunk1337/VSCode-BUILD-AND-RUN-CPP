@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build all",
+        "type": "shell",
+        "command": "powershell",
+        "args": [
+          "-Command",
+          "$cppFiles = Get-ChildItem -Path ${workspaceFolder} -Recurse -Filter '*.cpp' | ForEach-Object { $_.FullName }; g++ -o main.exe -std=c++20 $cppFiles"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "silent"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+  

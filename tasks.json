@@ -7,7 +7,7 @@
         "command": "powershell",
         "args": [
           "-Command",
-          "$cppFiles = Get-ChildItem -Path ${workspaceFolder} -Recurse -Filter '*.cpp' | ForEach-Object { $_.FullName }; g++ -o main.exe -std=c++20 $cppFiles"
+          "$cppFiles = Get-ChildItem -Path '${workspaceFolder}' -Recurse -Include '*.cpp' | ForEach-Object { $_.FullName }; g++ -o main.exe -std=c++20 $cppFiles"
         ],
         "group": {
           "kind": "build",
